@@ -22,7 +22,7 @@ module.exports = {
   type: "song",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
     //if no args send all stations
-    if (!args[0]) return stations(client, config.prefix, message);
+    if (!args[0]) return await stations(client, config.prefix, message);
     //if not a number error
     if (isNaN(args[0])) {
       return message.reply({

@@ -25,15 +25,15 @@ module.exports = client => {
   };
 
   client.updateMusicSystem = async (player, leave = false) => {
-    if (client.musicsettings.get(player.guild, "channel") && client.musicsettings.get(player.guild, "channel").length > 5) {
+    if (await client.musicsettings.get(player.guild, "channel") && await client.musicsettings.get(player.guild, "channel").length > 5) {
       client.logger("Update Music System called and executed")
-      let messageId = client.musicsettings.get(player.guild, "message");
+      let messageId = await client.musicsettings.get(player.guild, "message");
       //try to get the guild
       let guild = client.guilds.cache.get(player.guild);
       if (!guild) return client.logger("Music System - Guild not found!")
       //try to get the channel
-      let channel = guild.channels.cache.get(client.musicsettings.get(player.guild, "channel"));
-      if (!channel) channel = await guild.channels.fetch(client.musicsettings.get(player.guild, "channel")).catch(() => {}) || false
+      let channel = guild.channels.cache.get(await client.musicsettings.get(player.guild, "channel"));
+      if (!channel) channel = await guild.channels.fetch(await client.musicsettings.get(player.guild, "channel")).catch(() => {}) || false
       if (!channel) return client.logger("Music System - Channel not found!")
       if (!channel.permissionsFor(channel.guild.me).has(Permissions.FLAGS.SEND_MESSAGES)) return client.logger("Music System - Missing Permissions")
       //try to get the channel

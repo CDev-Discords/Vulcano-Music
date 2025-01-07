@@ -1,12 +1,12 @@
 {
-   "token": "Bot Token",
-   "prefix": "?",
+   "token": "",
+   "prefix": "V!",
    "ownerIDS": [
-      "442355791412854784"
+      "1216183624718749746"
    ],
    "status": {
-      "text": "{prefix}help | played {songsplayed} Songs on {guildcount} Guilds | Support: discord.gg/milrato",
-      "text2": "By: milrato.dev",
+      "text": "{prefix}help | Reproducidas {songsplayed} Canciones | En {guildcount} Servidores | Soporte: https://discord.gg/n6wrXqptrE",
+      "text2": "Changed by: CDev",
       "type": "PLAYING",
       "url": "https://twitch.tv/#"
    },
@@ -15,12 +15,15 @@
          {
             "host": "localhost",
             "port": 2333,
-            "password": "youshallnotpass"
+            "password": "cdev",
+            "version": "v3",
+            "secure": false,
+            "comment": "You can use Lavalink v4 instead. Just change v3 to v4"
          }
       ]
    },
    "spotify": {
-      "clientID": "",
-      "clientSecret": ""
+      "clientID": "0522108b2cb24c708fefface0348455a",
+      "clientSecret": "ac536c48444b430c8e4d83ff6e5329c8"
    }
 }

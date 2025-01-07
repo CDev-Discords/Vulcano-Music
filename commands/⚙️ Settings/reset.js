@@ -44,8 +44,8 @@ module.exports = {
           //and if its yes
           if (collected.first().content.toLowerCase() === `yes`) {
 
-            if (client.stats.has(message.guild.id)) {
-              client.stats.delete(message.guild.id)
+            if (await client.stats.has(message.guild.id)) {
+             await client.stats.delete(message.guild.id)
             }
             if (client.musicsettings.has(message.guild.id)) {
               client.musicsettings.delete(message.guild.id)
@@ -56,7 +56,7 @@ module.exports = {
             if (client.queuesaves.has(message.guild.id)) {
               client.queuesaves.delete(message.guild.id)
             }
-            databasing(client, message.guild.id)
+          await databasing(client, message.guild.id)
             //send the success message
             return message.reply({
               embeds: [new MessageEmbed()

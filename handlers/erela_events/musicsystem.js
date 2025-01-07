@@ -33,7 +33,7 @@ module.exports = client => {
     const es = client.settings.get(guild.id, "embed")
     const ls = client.settings.get(guild.id, "language")
     const prefix = client.settings.get(guild.id, "prefix");
-    var data = client.musicsettings.get(guild.id);
+    var data = await client.musicsettings.get(guild.id);
     const musicChannelId = data.channel;
     const musicChannelMessage = data.message;
     //if not setupped yet, return
@@ -77,13 +77,13 @@ module.exports = client => {
         })
       }
       //here i use my check_if_dj function to check if he is a dj if not then it returns true, and it shall stop!
-      if (player && interaction.customId != `Lyrics` && check_if_dj(client, member, player.queue.current)) {
+      if (player && interaction.customId != `Lyrics` && await check_if_dj(client, member, player.queue.current)) {
         return interaction.reply({
           embeds: [new MessageEmbed()
             .setColor(es.wrongcolor)
             .setFooter(client.getFooter(es))
             .setTitle(`<:no:833101993668771842> **You are not a DJ and not the Song Requester!**`)
-            .setDescription(`**DJ-ROLES:**\n${check_if_dj(client, interaction.member, player.queue.current)}`)
+            .setDescription(`**DJ-ROLES:**\n${await check_if_dj(client, interaction.member, player.queue.current)}`)
           ],
           ephemeral: true
         });
@@ -93,7 +93,7 @@ module.exports = client => {
           //if ther is nothing more to skip then stop music and leave the Channel
           if (!player.queue || !player.queue.size || player.queue.size === 0) {
             //if its on autoplay mode, then do autoplay before leaving...
-            if (player.get("autoplay")) return autoplay(client, player, "skip");
+            if (player.get("autoplay")) return await autoplay(client, player, "skip");
             interaction.reply({
               embeds: [new MessageEmbed()
                 .setColor(es.color)
@@ -400,7 +400,7 @@ module.exports = client => {
 
   client.on("messageCreate", async message => {
     if (!message.guild) return;
-    var data = client.musicsettings.get(message.guild.id);
+    var data = await client.musicsettings.get(message.guild.id);
     const musicChannelId = data.channel;
     //if not setupped yet, return
     if (!musicChannelId || musicChannelId.length < 5) return;

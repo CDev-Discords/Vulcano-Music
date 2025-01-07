@@ -17,7 +17,7 @@ module.exports = async (client, guild) => {
   }) => {
     theowner = user;
   }).catch(() => {})
-  databasing(client, guild.id)
+ await databasing(client, guild.id)
   let embed = new MessageEmbed()
     .setColor("GREEN")
     .setTitle(`👍 Joined a New Guild`)

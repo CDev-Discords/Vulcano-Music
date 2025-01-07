@@ -17,8 +17,8 @@ module.exports = {
   description: "Shows music Stats, like amount of Commands and played Songs etc.",
   type: "server",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
-    let global = client.stats.get("global");
-    let guild = client.stats.get(message.guild.id);
+    let global = await client.stats.get("global");
+    let guild = await client.stats.get(message.guild.id);
     message.reply({
       embeds: [new MessageEmbed().setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null).setFooter(client.getFooter(es))
         .addField(client.la[ls].cmds.info.stats.field1.title, handlemsg(client.la[ls].cmds.info.stats.field1.value, {

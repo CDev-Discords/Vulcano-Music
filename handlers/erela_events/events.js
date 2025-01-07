@@ -32,23 +32,23 @@ module.exports = (client) => {
    */
   const autoconnect = async () => {
     await delay(500);
-    let guilds = client.autoresume.keyArray();
+    let guilds = await client.autoresume.keyArray();
     if (!guilds || guilds.length == 0) return;
     for (const gId of guilds) {
       try {
         let guild = client.guilds.cache.get(gId);
         if (!guild) {
-          client.autoresume.delete(gId);
+         await client.autoresume.delete(gId);
           client.logger(`Autoresume`.brightCyan + ` - Bot got Kicked out of the Guild`)
           continue;
         }
-        var data = client.autoresume.get(gId);
+        var data = await client.autoresume.get(gId);
         if(!data) continue;
 
         let voiceChannel = guild.channels.cache.get(data.voiceChannel);
         if (!voiceChannel) voiceChannel = await guild.channels.fetch(data.voiceChannel).catch(() => {}) || false;
         if (!voiceChannel || !voiceChannel.members || voiceChannel.members.filter(m => !m.user.bot && !m.voice.deaf && !m.voice.selfDeaf).size < 1) {
-          client.autoresume.delete(gId);
+         await client.autoresume.delete(gId);
           client.logger(`Autoresume`.brightCyan + ` - Voice Channel is either Empty / no Listeners / got deleted`)
           continue;
         }
@@ -56,7 +56,7 @@ module.exports = (client) => {
         let textChannel = guild.channels.cache.get(data.textChannel);
         if (!textChannel) textChannel = await guild.channels.fetch(data.textChannel).catch(() => {}) || false;
         if (!textChannel) {
-          client.autoresume.delete(gId);
+         await client.autoresume.delete(gId);
           client.logger(`Autoresume`.brightCyan + ` - Text Channel got deleted`)
           continue;
         }
@@ -297,7 +297,7 @@ module.exports = (client) => {
         }
         break;
         }
-        client.autoresume.delete(player.guild)
+      await client.autoresume.delete(player.guild)
         client.logger("changed autoresume track to queue adjustments + deleted the database entry")
         if (data.playing) {
           setTimeout(() => {
@@ -330,15 +330,15 @@ module.exports = (client) => {
       playercreated.set(player.guild, true)
       //for checking the relevant messages
       var interval = setInterval(async () => {
-        if (client.musicsettings.get(player.guild, `channel`) && client.musicsettings.get(player.guild, `channel`).length > 5) {
+        if (await client.musicsettings.get(player.guild, `channel`) && await client.musicsettings.get(player.guild, `channel`).length > 5) {
           client.logger(`Music System - Relevant Checker - Checkingfor unrelevant Messages`)
-          let messageId = client.musicsettings.get(player.guild, `message`);
+          let messageId = await client.musicsettings.get(player.guild, `message`);
           //try to get the guild
           let guild = client.guilds.cache.get(player.guild);
           if (!guild) return client.logger(`Music System - Relevant Checker - Guild not found!`)
           //try to get the channel
-          let channel = guild.channels.cache.get(client.musicsettings.get(player.guild, `channel`));
-          if (!channel) channel = await guild.channels.fetch(client.musicsettings.get(player.guild, `channel`)).catch(() => {}) || false
+          let channel = guild.channels.cache.get(await client.musicsettings.get(player.guild, `channel`));
+          if (!channel) channel = await guild.channels.fetch(await client.musicsettings.get(player.guild, `channel`)).catch(() => {}) || false
           if (!channel) return client.logger(`Music System - Relevant Checker - Channel not found!`)
           if (!channel.permissionsFor(channel.guild.me).has(Permissions.FLAGS.MANAGE_MESSAGES)) return client.logger(`Music System - Relevant Checker - Missing Permissions`)
           //try to get the channel
@@ -376,7 +376,7 @@ module.exports = (client) => {
               requester: track.requester.id,
             }
           }
-          client.autoresume.ensure(pl.guild, {
+         await client.autoresume.ensure(pl.guild, {
             guild: null,
             voiceChannel: null,
             textChannel: null,
@@ -392,22 +392,22 @@ module.exports = (client) => {
             filtervalue: null,
             autoplay: null,
           });
-          var data = client.autoresume.get(pl.guild);
-          if (data.guild != pl.guild) client.autoresume.set(pl.guild, pl.guild, `guild`)
-          if (data.voiceChannel != pl.voiceChannel) client.autoresume.set(pl.guild, pl.voiceChannel, `voiceChannel`)
+          var data = await client.autoresume.get(pl.guild);
+          if (data.guild != pl.guild) await client.autoresume.set(pl.guild, pl.guild, `guild`)
+          if (data.voiceChannel != pl.voiceChannel) await client.autoresume.set(pl.guild, pl.voiceChannel, `voiceChannel`)
           if (data.textChannel != pl.textChannel) client.autoresume.set(pl.guild, pl.textChannel, `textChannel`)
 
           if (pl.queue && pl.queue.current && (!data.current || data.current.identifier != pl.queue.current.identifier)) client.autoresume.set(pl.guild, makeTrack(pl.queue.current), `current`)
-          if (data.volume != pl.volume) client.autoresume.set(pl.guild, pl.volume, `volume`)
-          if (data.queueRepeat != pl.queueRepeat) client.autoresume.set(pl.guild, pl.queueRepeat, `queueRepeat`)
-          if (data.trackRepeat != pl.trackRepeat) client.autoresume.set(pl.guild, pl.trackRepeat, `trackRepeat`)
-          if (data.playing != pl.playing) client.autoresume.set(pl.guild, pl.playing, `playing`)
-          if (data.position != pl.position) client.autoresume.set(pl.guild, pl.position, `position`)
-          if (data.eq != eq) client.autoresume.set(pl.guild, eq, `eq`)
-          if (data.filter != filter) client.autoresume.set(pl.guild, filter, `filter`)
-          if (data.filtervalue != filtervalue) client.autoresume.set(pl.guild, filtervalue, `filtervalue`)
-          if (data.autoplay != autoplay) client.autoresume.set(pl.guild, autoplay, `autoplay`)
-          if (pl.queue && !arraysEqual(data.queue, [...pl.queue])) client.autoresume.set(pl.guild, [...pl.queue].map(track => makeTrack(track)), `queue`)
+          if (data.volume != pl.volume) await client.autoresume.set(pl.guild, pl.volume, `volume`)
+          if (data.queueRepeat != pl.queueRepeat) await client.autoresume.set(pl.guild, pl.queueRepeat, `queueRepeat`)
+          if (data.trackRepeat != pl.trackRepeat) await client.autoresume.set(pl.guild, pl.trackRepeat, `trackRepeat`)
+          if (data.playing != pl.playing) await client.autoresume.set(pl.guild, pl.playing, `playing`)
+          if (data.position != pl.position) await client.autoresume.set(pl.guild, pl.position, `position`)
+          if (data.eq != eq) await client.autoresume.set(pl.guild, eq, `eq`)
+          if (data.filter != filter) await client.autoresume.set(pl.guild, filter, `filter`)
+          if (data.filtervalue != filtervalue) await client.autoresume.set(pl.guild, filtervalue, `filtervalue`)
+          if (data.autoplay != autoplay) await client.autoresume.set(pl.guild, autoplay, `autoplay`)
+          if (pl.queue && !arraysEqual(data.queue, [...pl.queue])) await client.autoresume.set(pl.guild, [...pl.queue].map(track => makeTrack(track)), `queue`)
 
           function arraysEqual(a, b) {
             if (a === b) return true;
@@ -442,7 +442,7 @@ module.exports = (client) => {
       playerintervals.delete(player.guild);
       //clear the interval for the autoresume system
       clearInterval(playerintervals_autoresume.get(player.guild))
-      if (client.autoresume.has(player.guild)) client.autoresume.delete(player.guild);
+      if (await client.autoresume.has(player.guild)) await client.autoresume.delete(player.guild);
       playerintervals_autoresume.delete(player.guild);
       //if the song ends, edit message(s)
       if (player.textChannel && player.guild) {
@@ -457,7 +457,7 @@ module.exports = (client) => {
     .on(`trackStart`, async (player, track) => {
       try {
         try {
-          client.stats.inc(`global`, `songs`)
+         await client.stats.inc(`global`, `songs`)
         } catch (e) {}
         let edited = false;
         let guild = client.guilds.cache.get(player.guild);
@@ -483,7 +483,7 @@ module.exports = (client) => {
           }
 
 
-          databasing(client, player.guild, player.get(`playerauthor`));
+         await databasing(client, player.guild, player.get(`playerauthor`));
           playercreated.delete(player.guild); // delete the playercreated state from the thing
           client.logger(`Player Created in ${guild ? guild.name : player.guild} | Set the - Guild Default Data`);
           /*client.logger({
@@ -506,7 +506,7 @@ module.exports = (client) => {
 
         //Update the Music System Message - Embed
         client.updateMusicSystem(player);
-        if (client.musicsettings.get(player.guild, `channel`) == player.textChannel) {
+        if (await client.musicsettings.get(player.guild, `channel`) == player.textChannel) {
           return client.logger(`No PRUNING-Message sent, because Player-TextChannel == Music System Text Channel`)
         }
         if (player.textChannel && player.get(`previoustrack`)) {
@@ -571,13 +571,13 @@ module.exports = (client) => {
                 ephemeral: true
               })
 
-            if (i.customId != `10` && check_if_dj(client, i.member, player.queue.current)) {
+            if (i.customId != `10` && await check_if_dj(client, i.member, player.queue.current)) {
               return i.reply({
                 embeds: [new MessageEmbed()
                   .setColor(es.wrongcolor)
                   .setFooter(client.getFooter(es))
                   .setTitle(`❌ **You are not a DJ and not the Song Requester!**`)
-                  .setDescription(`**DJ-ROLES:**\n${check_if_dj(client, i.member, player.queue.current)}`)
+                  .setDescription(`**DJ-ROLES:**\n${await check_if_dj(client, i.member, player.queue.current)}`)
                 ],
                 ephemeral: true
               });
@@ -589,7 +589,7 @@ module.exports = (client) => {
               //if ther is nothing more to skip then stop music and leave the Channel
               if (player.queue.size == 0) {
                 //if its on autoplay mode, then do autoplay before leaving...
-                if (player.get(`autoplay`)) return autoplay(client, player, `skip`);
+                if (player.get(`autoplay`)) return await autoplay(client, player, `skip`);
                 i.reply({
                   embeds: [new MessageEmbed()
                     .setColor(es.color)
@@ -843,9 +843,9 @@ module.exports = (client) => {
     })
     .on(`queueEnd`, async (player) => {
       //en-sure the database data
-      databasing(client, player.guild, player.get(`playerauthor`));
+     await databasing(client, player.guild, player.get(`playerauthor`));
       //if autoplay is enabled, then continue with the autoplay function
-      if (player.get(`autoplay`)) return autoplay(client, player);
+      if (player.get(`autoplay`)) return await autoplay(client, player);
       try {
         //update the player
         player = client.manager.players.get(player.guild);

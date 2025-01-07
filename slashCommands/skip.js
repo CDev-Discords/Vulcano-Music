@@ -68,7 +68,7 @@ module.exports = {
       //if ther is nothing more to skip then stop music and leave the Channel
       if (player.queue.size == 0) {
         //if its on autoplay mode, then do autoplay before leaving...
-        if (player.get("autoplay")) return autoplay(client, player, "skip");
+        if (player.get("autoplay")) return await autoplay(client, player, "skip");
         if (message.guild.me.voice.channel) {
           try {
             message.guild.me.voice.disconnect();

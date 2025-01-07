@@ -33,7 +33,7 @@ module.exports = async (client, interaction) => {
           }).catch(() => {});
         }
         const CategoryName = interaction.commandName;
-        databasing(client, guild.id, member.id)
+       await databasing(client, guild.id, member.id)
         var not_allowed = false;
         const guild_settings = client.settings.get(guild.id);
         let es = guild_settings.embed;
@@ -99,8 +99,8 @@ module.exports = async (client, interaction) => {
           }
           timestamps.set(member.id, now); //if he is not on cooldown, set it to the cooldown
           setTimeout(() => timestamps.delete(member.id), cooldownAmount); //set a timeout function with the cooldown, so it gets deleted later on again
-          client.stats.inc(guild.id, "commands"); //counting our Database stats for SERVER
-          client.stats.inc("global", "commands"); //counting our Database Stats for GLOBAL
+         await client.stats.inc(guild.id, "commands"); //counting our Database stats for SERVER
+         await client.stats.inc("global", "commands"); //counting our Database Stats for GLOBAL
           //if Command has specific permission return error
           if (command.memberpermissions && command.memberpermissions.length > 0 && !interaction.member.permissions.has(command.memberpermissions)) {
             return interaction.reply({
@@ -147,13 +147,13 @@ module.exports = async (client, interaction) => {
           await delay(350);
         }
         if(player && player.queue && player.queue.current && command.parameters.check_dj){
-          if(check_if_dj(client, interaction.member, player.queue.current)) {
+          if(await check_if_dj(client, interaction.member, player.queue.current)) {
             return interaction.reply({embeds: [new MessageEmbed()
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
               .setTitle(`❌ ** You are not a DJ and not the Song Requester! ** `)
               .setDescription(` ** DJ - ROLES: ** \n$ {
-                      check_if_dj(client, interaction.member, player.queue.current)
+                      await check_if_dj(client, interaction.member, player.queue.current)
                     }
                     `)
             ],

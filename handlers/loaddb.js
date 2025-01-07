@@ -1,40 +1,35 @@
-const Enmap = require("enmap");
-module.exports = client => {
+//Este handler se conecta a las bases de datos como cliente
+const { remoteCacheClient } = require("remote-sqlite-database");
+module.exports = async client => {
 
-  client.stats = new Enmap({
-    name: "stats",
-    dataDir: "./databases/stats"
-  });
-  client.musicsettings = new Enmap({
-    name: "musicsettings",
-    dataDir: "./databases/musicsettings"
-  });
-  client.autoresume = new Enmap({
-    name: "autoresume",
-    dataDir: "./databases/musicsettings"
-  });
-  client.settings = new Enmap({
-    name: "settings",
-    dataDir: "./databases/settings"
-  });
-  client.queuesaves = new Enmap({
-    name: "queuesaves",
-    dataDir: "./databases/queuesaves",
-    ensureProps: false
-  });
-  client.premium = new Enmap({
-    name: "premium",
-    dataDir: "./databases/premium"
+  client.stats = loadDB("CDev", "CDevDB", "localhost", 4040)
+  client.musicsettings = loadDB("CDev", "CDevDB", "localhost", 4044)
+  client.autoresume = loadDB("CDev", "CDevDB", "localhost", 4044)
+  client.settings = loadDB("CDev", "CDevDB", "localhost", 4041)
+  client.queuesaves = loadDB("CDev", "CDevDB", "localhost", 4042)
+  client.premium = loadDB("CDev", "CDevDB", "localhost", 4043)
+
+function loadDB(username, password, host, port) {
+  client.database = new remoteCacheClient({
+      username,
+      password,
+      host,
+      port,
+      tls: true,
+      keyPathing: true
   })
+  return client.database;
+}
+    
+          const DbPing = await client.database.ping();
+          
+          console.log(`[x] :: `.magenta + `LOADED THE DATABASE        :x: Database got a ${DbPing}ms ping`.green)
 
-
-
-
-  client.premium.ensure("global", {
+  await client.premium.ensure("global", {
     guilds: [],
   });
 
-  client.stats.ensure("global", {
+  await client.stats.ensure("global", {
     commands: 0,
     songs: 0,
     setups: 0

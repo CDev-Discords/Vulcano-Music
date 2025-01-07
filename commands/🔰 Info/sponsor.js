@@ -30,7 +30,7 @@ module.exports = {
       .setTitle(eval(client.la[ls]["cmds"]["info"]["sponsor"]["variable3"]))
       .setURL("https://nextnode.de")
       .setDescription(eval(client.la[ls]["cmds"]["info"]["sponsor"]["variable4"]));
-    swap_pages2(client, message, [embed1, embed2])
+   await swap_pages2(client, message, [embed1, embed2])
 
   }
 }

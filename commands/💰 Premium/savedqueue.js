@@ -407,7 +407,7 @@ module.exports = {
         description += `**❯ ${item}** | \`${queues[item].length} Tracks\`\n`
       }
       //return susccess message
-      return swap_pages(client, message, description, `Your Saved Queues`)
+      return await swap_pages(client, message, description, `Your Saved Queues`)
     }
     break;
     case `create`:
@@ -716,7 +716,7 @@ module.exports = {
       //return susccess message
       let array = [];
       tracks.map((track, index) => array.push(`**${index})** [${track.title.split(`]`).join(`}`).split(`[`).join(`{`).substr(0, 60)}](${track.url})`)).join(`\n`)
-      return swap_pages(client, message, array, `Detailed Information about: \`${Name}\` [${tracks.length} Tracks]`)
+      return await swap_pages(client, message, array, `Detailed Information about: \`${Name}\` [${tracks.length} Tracks]`)
     }
     break;
     default:

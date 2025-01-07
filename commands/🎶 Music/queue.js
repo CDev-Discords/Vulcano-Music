@@ -76,7 +76,7 @@ module.exports = {
         .setDescription(desc));
     }
     //return susccess message
-    return swap_pages2(client, message, embeds)
+    return await swap_pages2(client, message, embeds)
   }
 };
 /**

@@ -18,6 +18,7 @@
  * @param {1} Import_Modules for this FIle
  *********************************************************/
 const Discord = require("discord.js");
+const Cluster = require("discord-hybrid-sharding");
 const colors = require("colors");
 const enmap = require("enmap"); 
 const fs = require("fs"); 
@@ -29,7 +30,8 @@ const config = require("./botconfig/config.json")
 const client = new Discord.Client({
   fetchAllMembers: false,
   failIfNotExists: false,
-  shards: "auto",
+  shards: Cluster.data.SHARD_LIST,        //  A Array of Shard list, which will get spawned
+  shardCount: Cluster.data.TOTAL_SHARDS, // The Number of Total Shards
   allowedMentions: {
     parse: ["roles", "users"],
     repliedUser: false,
@@ -83,6 +85,7 @@ Array("extraevents", "loaddb", "clientvariables", "command", "events", "erelahan
 /**********************************************************
  * @param {6} Login_to_the_Bot
 *********************************************************/
+client.cluster = new Cluster.Client(client); //Init the Client & So we can also access broadcastEval...
 client.login(process.env.token || config.token);
 
 

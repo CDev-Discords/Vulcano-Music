@@ -152,8 +152,8 @@ module.exports = {
                   .replace("{name}", client.user.username)
                   .replace("{tag}", client.user.tag)
                   .replace("{commands}", client.commands.size)
-                  .replace("{usedcommands}", nFormatter(Math.ceil(client.stats.get("global", "commands") * [...client.guilds.cache.values()].length / 10), 2))
-                  .replace("{songsplayed}", nFormatter(Math.ceil(client.stats.get("global", "songs") * [...client.guilds.cache.values()].length / 10), 2))
+                  .replace("{usedcommands}", nFormatter(Math.ceil(await client.stats.get("global", "commands") * [...client.guilds.cache.values()].length / 10), 2))
+                  .replace("{songsplayed}", nFormatter(Math.ceil(await client.stats.get("global", "songs") * [...client.guilds.cache.values()].length / 10), 2))
                   newStatusText = String(newStatusText).substr(0, 128);
                   status.status.text = String(msg).substr(0, 128);
                   client.user.setActivity(newStatusText, {
@@ -224,8 +224,8 @@ module.exports = {
                   .replace("{name}", client.user.username)
                   .replace("{tag}", client.user.tag)
                   .replace("{commands}", client.commands.size)
-                  .replace("{usedcommands}", nFormatter(Math.ceil(client.stats.get("global", "commands") * [...client.guilds.cache.values()].length / 10), 2))
-                  .replace("{songsplayed}", nFormatter(Math.ceil(client.stats.get("global", "songs") * [...client.guilds.cache.values()].length / 10), 2))
+                  .replace("{usedcommands}", nFormatter(Math.ceil(await client.stats.get("global", "commands") * [...client.guilds.cache.values()].length / 10), 2))
+                  .replace("{songsplayed}", nFormatter(Math.ceil(await client.stats.get("global", "songs") * [...client.guilds.cache.values()].length / 10), 2))
                   newStatusText = String(newStatusText).substr(0, 128);
                   status.status.text2 = String(msg).substr(0, 128);
                   client.user.setActivity(newStatusText, {

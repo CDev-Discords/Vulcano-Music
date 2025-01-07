@@ -92,9 +92,9 @@ module.exports = {
     channel.send({
       embeds,
       components
-    }).then(msg => {
-      client.musicsettings.set(message.guild.id, channel.id, "channel");
-      client.musicsettings.set(message.guild.id, msg.id, "message");
+    }).then(async msg => {
+     await client.musicsettings.set(message.guild.id, channel.id, "channel");
+     await client.musicsettings.set(message.guild.id, msg.id, "message");
       //send a success message
       return message.reply(`✅ **Successfully setupped the Music System in:** <#${channel.id}>`)
     });

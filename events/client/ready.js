@@ -3,7 +3,7 @@ let config = require(`${process.cwd()}/botconfig/config.json`)
 const settings = require(`${process.cwd()}/botconfig/settings.json`);
 const Discord = require("discord.js")
 const moment = require("moment")
-module.exports = client => {
+module.exports = async client => {
   //SETTING ALL GUILD DATA FOR THE DJ ONLY COMMANDS for the DEFAULT
   //client.guilds.cache.forEach(guild=>client.settings.set(guild.id, ["autoplay", "clearqueue", "forward", "loop", "jump", "loopqueue", "loopsong", "move", "pause", "resume", "removetrack", "removedupe", "restart", "rewind", "seek", "shuffle", "skip", "stop", "volume"], "djonlycmds"))
   try {
@@ -33,7 +33,7 @@ module.exports = client => {
 }
 var state = false;
 
-function change_status(client) {
+async function change_status(client) {
   config = require(`${process.cwd()}/botconfig/config.json`)
   if (!state) {
     client.user.setActivity(`${config.status.text}`
@@ -45,8 +45,8 @@ function change_status(client) {
       .replace("{name}", client.user.username)
       .replace("{tag}", client.user.tag)
       .replace("{commands}", client.commands.size)
-      .replace("{usedcommands}", client.stats.get("global", "commands"))
-      .replace("{songsplayed}", client.stats.get("global", "songs")), {
+      .replace("{usedcommands}", await client.stats.get("global", "commands"))
+      .replace("{songsplayed}", await client.stats.get("global", "songs")), {
         type: config.status.type,
         url: config.status.url
       });
@@ -61,8 +61,8 @@ function change_status(client) {
       .replace("{name}", client.user.username)
       .replace("{tag}", client.user.tag)
       .replace("{commands}", client.commands.size)
-      .replace("{usedcommands}", client.stats.get("global", "commands"))
-      .replace("{songsplayed}", client.stats.get("global", "songs")), {
+      .replace("{usedcommands}", await client.stats.get("global", "commands"))
+      .replace("{songsplayed}", await client.stats.get("global", "songs")), {
         type: config.status.type,
         url: config.status.url
       });

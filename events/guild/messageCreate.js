@@ -24,9 +24,9 @@ module.exports = async (client, message) => {
         if (message.channel?.partial) await message.channel.fetch().catch(() => {});
         if (message.member?.partial) await message.member.fetch().catch(() => {});
         //en-sure all databases for this server/user from the databasing function
-        databasing(client, message.guild.id, message.author.id)
+       await databasing(client, message.guild.id, message.author.id)
         var not_allowed = false;
-        const guild_settings = client.settings.get(message.guild.id);
+        const guild_settings = await client.settings.get(message.guild.id);
         let es = guild_settings.embed;
         let ls = guild_settings.language;
         let {
@@ -109,7 +109,7 @@ module.exports = async (client, message) => {
         if (command) {
 
           if (command.category == "💰 Premium") {
-            let premiumdata = client.premium.get("global");
+            let premiumdata = await client.premium.get("global");
             if (!premiumdata.guilds.includes(message.guild.id)) {
               return message.reply({
                 embeds: [
@@ -123,7 +123,7 @@ module.exports = async (client, message) => {
             }
 
           }
-          var musicData = client.musicsettings.get(message.guild.id);
+          var musicData = await client.musicsettings.get(message.guild.id);
           if (musicData.channel && musicData.channel == message.channel.id) {
             return message.reply("❌ **Please use a Command Somewhere else!**").then(msg => {
               setTimeout(() => {
@@ -183,8 +183,8 @@ module.exports = async (client, message) => {
           timestamps.set(message.author.id, now); //if he is not on cooldown, set it to the cooldown
           setTimeout(() => timestamps.delete(message.author.id), cooldownAmount); //set a timeout function with the cooldown, so it gets deleted later on again
           try {
-            client.stats.inc(message.guild.id, "commands"); //counting our Database stats for SERVER
-            client.stats.inc("global", "commands"); //counting our Database Stats for GLOBAL
+           await client.stats.inc(message.guild.id, "commands"); //counting our Database stats for SERVER
+           await client.stats.inc("global", "commands"); //counting our Database Stats for GLOBAL
 
             //if Command has specific permission return error
             if (command.memberpermissions) {
@@ -239,12 +239,12 @@ module.exports = async (client, message) => {
                 await delay(350);
               }
               if(player && player.queue && player.queue.current && command.parameters.check_dj){
-                if(check_if_dj(client, message.member, player.queue.current)) {
+                if(await check_if_dj(client, message.member, player.queue.current)) {
                   return message.reply({embeds: [new MessageEmbed()
                     .setColor(ee.wrongcolor)
                     .setFooter(ee.footertext, ee.footericon)
                     .setTitle(`❌**You are not a DJ and not the Song Requester!** `)
-                    .setDescription(`**DJ - ROLES:** \n${check_if_dj(client, message.member, player.queue.current)}`)
+                    .setDescription(`**DJ - ROLES:** \n${await check_if_dj(client, message.member, player.queue.current)}`)
                   ],}).catch(()=>{})
                 }
               }

@@ -34,15 +34,15 @@ module.exports.arrayMove = arrayMove;
 module.exports.isValidURL = isValidURL;
 module.exports.check_if_dj = check_if_dj;
 
-function check_if_dj(client, member, song) {
+async function check_if_dj(client, member, song) {
   //if no message added return
   if (!client) return false;
-  var roleid = client.settings.get(member.guild.id, `djroles`)
+  var roleid = await client.settings.get(member.guild.id, `djroles`)
   if (String(roleid) == "") return false;
   var isdj = false;
   for (const djRole of roleid) {
     if (!member.guild.roles.cache.get(djRole)) {
-      client.settings.remove(member.guild.id, djRole, `djroles`)
+     await client.settings.remove(member.guild.id, djRole, `djroles`)
       continue;
     }
     if (member.roles.cache.has(djRole)) isdj = true;
@@ -215,9 +215,9 @@ function format(millis) {
   }
 }
 
-function stations(client, prefix, message) {
-  let es = client.settings.get(message.guild.id, "embed");
-  let ls = client.settings.get(message.guild.id, "language");
+async function stations(client, prefix, message) {
+  let es = await client.settings.get(message.guild.id, "embed");
+  let ls = await client.settings.get(message.guild.id, "language");
   
 
   try {
@@ -394,8 +394,8 @@ function escapeRegex(str) {
 }
 
 async function autoplay(client, player, type) {
-  let es = client.settings.get(player.guild, "embed")
-  let ls = client.settings.get(player.guild, "language")
+  let es = await client.settings.get(player.guild, "embed")
+  let ls = await client.settings.get(player.guild, "language")
   try {
     if (player.queue.length > 0) return;
     const previoustrack = player.get("previoustrack") || player.queue.current;
@@ -519,8 +519,8 @@ function nFormatter(num, digits = 2) {
 }
 
 async function swap_pages(client, message, description, TITLE) {
-  let es = client.settings.get(message.guild.id, "embed");
-  let prefix = client.settings.get(message.guild.id, "prefix");
+  let es = await client.settings.get(message.guild.id, "embed");
+  let prefix = await client.settings.get(message.guild.id, "prefix");
   let cmduser = message.author;
 
   /**
@@ -828,24 +828,24 @@ async function swap_pages2_interaction(client, interaction, embeds) {
 
 }
 
-function databasing(client, guildid, userid) {
+async function databasing(client, guildid, userid) {
   if (!client || client == undefined || !client.user || client.user == undefined) return;
   try {
     if (userid) {
-      client.queuesaves.ensure(userid, {
+     await client.queuesaves.ensure(userid, {
         "TEMPLATEQUEUEINFORMATION": ["queue", "sadasd"]
       });
     }
     if (guildid) {
-      client.musicsettings.ensure(guildid, {
+     await client.musicsettings.ensure(guildid, {
         "channel": "",
         "message": ""
       })
-      client.stats.ensure(guildid, {
+     await client.stats.ensure(guildid, {
         commands: 0,
         songs: 0
       });
-      client.settings.ensure(guildid, {
+     await client.settings.ensure(guildid, {
         prefix: config.prefix,
         embed: {
           "color": ee.color,
