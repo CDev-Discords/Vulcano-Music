@@ -1,73 +1,93 @@
 lavalink:
-    plugins:
-        dependency: dev.lavalink.youtube:youtube-plugin:1.10.2
-        repository: https://maven.lavalink.dev/releases
-    server:
-        bufferDurationMs: 100
-        filters:
-            channelMix: true
-            distortion: true
-            equalizer: true
-            karaoke: true
-            lowPass: true
-            rotation: true
-            timescale: true
-            tremolo: true
-            vibrato: true
-            volume: true
-        frameBufferDurationMs: 2000
-        gc-warnings: true
-        nonAllocatingFrameBuffer: true
-        opusEncodingQuality: 8
-        password: cdev
-        playerUpdateInterval: 3
-        resamplingQuality: MEDIUM
-        soundcloudSearchEnabled: true
-        sources:
-            bandcamp: true
-            http: true
-            local: false
-            nico: true
-            soundcloud: true
-            twitch: true
-            vimeo: true
-            youtube: false
-        trackStuckThresholdMs: 5000
-        useSeekGhosting: true
-        youtubePlaylistLoadLimit: 3
-        youtubeSearchEnabled: true
-logging:
-    file:
-        path: ./logs/
-    level:
-        lavalink: WARN
-        root: WARN
-    logback:
-        rollingpolicy:
-            max-file-size: 500MB
-            max-history: 15
-    request:
-        enabled: false
-metrics:
-    prometheus:
-        enabled: false
-        endpoint: /metrics
+  plugins:
+    dependency: "dev.lavalink.youtube:youtube-plugin:1.11.5"  # Versión más estable actualmente
+    repository: "https://maven.lavalink.dev/releases"
+  server:
+    password: "cdev"
+    # Optimizaciones de buffer para fluidez
+    bufferDurationMs: 600  # Aumentado para máquinas lentas
+    frameBufferDurationMs: 8000  # Buffer más grande para evitar cortes
+    nonAllocatingFrameBuffer: true  # Reduce uso de memoria
+    
+    # Configuración de audio optimizada
+    opusEncodingQuality: 6  # Balance calidad/rendimiento
+    resamplingQuality: LOW  # Menor consumo de CPU
+    
+    # Filtros (solo los esenciales para ahorrar recursos)
+    filters:
+      volume: true
+      equalizer: true
+      timescale: true
+      lowPass: true
+      # Filtros deshabilitados para ahorrar recursos:
+      channelMix: false
+      distortion: false
+      karaoke: false
+      rotation: false
+      tremolo: false
+      vibrato: false
+    
+    # Fuentes de audio
+    sources:
+      bandcamp: true
+      http: true
+      local: false
+      nico: false  # Deshabilitado para ahorrar recursos
+      soundcloud: true
+      twitch: true
+      vimeo: true
+    
+    # Configuración específica de YouTube
+    youtubePlaylistLoadLimit: 3
+    youtubeSearchEnabled: true
+    soundcloudSearchEnabled: true
+    
+    # Otras optimizaciones
+    trackStuckThresholdMs: 15000  # Mayor tolerancia
+    useSeekGhosting: true
+    playerUpdateInterval: 5  # Intervalo aumentado
+    gc-warnings: false  # Desactivado para menos logs
+
+# Configuración del plugin de YouTube con mirror
 plugins:
-    allowDirectPlaylistIds: true
-    allowDirectVideoIds: true
+  youtube:
+    enabled: true # Whether this source can be used.
     allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
     clients:
-        - MUSIC
-        - ANDROID_VR
-        - WEB
-        - WEBEMBEDDED
-    enabled: true
-    youtube: null
-sentry:
-    dsn: ""
-    environment: ""
+      - MWEB
+    loadLimit: 3
+    searchLimit: 5
+
+# Configuración de logging optimizada
+logging:
+  level:
+    root: ERROR  # Menos logs = menos recursos
+    lavalink: ERROR
+  file:
+    path: ./logs/
+  logback:
+    rollingpolicy:
+      max-file-size: 200MB  # Tamaño reducido
+      max-history: 7  # Menos archivos guardados
+  request:
+    enabled: false
+
+# Métricas desactivadas para ahorrar recursos
+metrics:
+  prometheus:
+    enabled: false
+    endpoint: /metrics
+
+# Configuración del servidor (sin cambios)
 server:
-    address: 0.0.0.0
-    http2:
-        enabled: false
-    port: 2333
+  address: 0.0.0.0
+  http2:
+    enabled: false
+  port: 2333
+
+# Sentry desactivado
+sentry:
+  dsn: ""
+  environment: ""

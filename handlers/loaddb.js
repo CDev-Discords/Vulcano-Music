@@ -16,7 +16,7 @@ function loadDB(username, password, host, port) {
       host,
       port,
       tls: true,
-      keyPathing: true
+      keyPathing: false
   })
   return client.database;
 }

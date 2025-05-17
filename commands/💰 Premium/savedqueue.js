@@ -62,7 +62,7 @@ module.exports = {
             ]
           });
         //if the queue does not exist yet, error
-        if (!client.queuesaves.get(message.author.id, `${Name}`))
+        if (!await client.queuesaves.get(message.author.id, `${Name}`))
           return message.reply({
             embeds: [new MessageEmbed()
               .setFooter(client.getFooter(es))
@@ -93,7 +93,7 @@ module.exports = {
               .setTitle(eval(client.la[ls]["cmds"]["customqueues"]["savedqueue"]["variable18"]))
             ]
           });
-        let oldtracks = client.queuesaves.get(message.author.id, `${Name}`);
+        let oldtracks = await client.queuesaves.get(message.author.id, `${Name}`);
         if (!Array.isArray(oldtracks)) oldtracks = [];
         //add the track
         oldtracks.push({
@@ -101,7 +101,7 @@ module.exports = {
           "url": track.uri
         })
         //save it in the db
-        client.queuesaves.set(message.author.id, oldtracks, `${Name}`);
+       await client.queuesaves.set(message.author.id, oldtracks, `${Name}`);
         //return susccess message
         return message.reply({
           embeds: [new MessageEmbed()
@@ -133,7 +133,7 @@ module.exports = {
           ]
         });
       //if the queue does not exist yet, error
-      if (!client.queuesaves.get(message.author.id, `${Name}`))
+      if (!await client.queuesaves.get(message.author.id, `${Name}`))
         return message.reply({
           embeds: [new MessageEmbed()
             .setFooter(client.getFooter(es))
@@ -165,7 +165,7 @@ module.exports = {
           ]
         });
       //get the old tracks from the Name
-      let oldtracks = client.queuesaves.get(message.author.id, `${Name}`);
+      let oldtracks = await client.queuesaves.get(message.author.id, `${Name}`);
       if (!Array.isArray(oldtracks)) oldtracks = [];
       const newtracks = [];
 
@@ -182,7 +182,7 @@ module.exports = {
       //define the new customqueue by adding the newtracks to the old tracks
       let newqueue = oldtracks.concat(newtracks)
       //save the newcustomqueue into the db
-      client.queuesaves.set(message.author.id, newqueue, `${Name}`);
+     await client.queuesaves.set(message.author.id, newqueue, `${Name}`);
       //return susccess message
       return message.reply({
         embeds: [new MessageEmbed()
@@ -224,7 +224,7 @@ module.exports = {
           ]
         });
       //if the queue already exists, then errors
-      if (!client.queuesaves.get(message.author.id, `${Name}`))
+      if (!await client.queuesaves.get(message.author.id, `${Name}`))
         return message.reply({
           embeds: [new MessageEmbed()
             .setFooter(client.getFooter(es))
@@ -233,7 +233,7 @@ module.exports = {
             .setDescription(eval(client.la[ls]["cmds"]["customqueues"]["savedqueue"]["variable37"]))
           ]
         });
-      let tracks = client.queuesaves.get(message.author.id, `${Name}`);
+      let tracks = await client.queuesaves.get(message.author.id, `${Name}`);
       if (Number(Options) >= tracks.length || Number(Options) < 0)
         return message.reply({
           embeds: [new MessageEmbed()
@@ -251,7 +251,7 @@ module.exports = {
         return /\S/.test(entry);
       });
       //save it on the db again
-      client.queuesaves.set(message.author.id, tracks, `${Name}`)
+     await client.queuesaves.set(message.author.id, tracks, `${Name}`)
       //return susccess message
       return message.reply({
         embeds: [new MessageEmbed()
@@ -284,7 +284,7 @@ module.exports = {
           ]
         });
       //if the queue already exists, then errors
-      if (!client.queuesaves.get(message.author.id, `${Name}`))
+      if (!await client.queuesaves.get(message.author.id, `${Name}`))
         return message.reply({
           embeds: [new MessageEmbed()
             .setFooter(client.getFooter(es))
@@ -293,7 +293,7 @@ module.exports = {
             .setDescription(eval(client.la[ls]["cmds"]["customqueues"]["savedqueue"]["variable46"]))
           ]
         });
-      let oldtracks = client.queuesaves.get(message.author.id, `${Name}`);
+      let oldtracks = await client.queuesaves.get(message.author.id, `${Name}`);
       if (!Array.isArray(oldtracks))
         return message.reply({
           embeds: [new MessageEmbed()
@@ -305,7 +305,7 @@ module.exports = {
         });
       const newtracks = shuffle(oldtracks);
       //save it in the db
-      client.queuesaves.set(message.author.id, newtracks, `${Name}`);
+     await client.queuesaves.set(message.author.id, newtracks, `${Name}`);
       //return susccess message
       return message.reply({
         embeds: [new MessageEmbed()
@@ -338,7 +338,7 @@ module.exports = {
           ]
         });
       //if the queue already exists, then errors
-      if (!client.queuesaves.get(message.author.id, `${Name}`))
+      if (!await client.queuesaves.get(message.author.id, `${Name}`))
         return message.reply({
           embeds: [new MessageEmbed()
             .setFooter(client.getFooter(es))
@@ -347,7 +347,7 @@ module.exports = {
             .setDescription(eval(client.la[ls]["cmds"]["customqueues"]["savedqueue"]["variable55"]))
           ]
         });
-      let oldtracks = client.queuesaves.get(message.author.id, `${Name}`);
+      let oldtracks = await client.queuesaves.get(message.author.id, `${Name}`);
       if (!Array.isArray(oldtracks))
         return message.reply({
           embeds: [new MessageEmbed()
@@ -374,7 +374,7 @@ module.exports = {
         }
       }
       //save it in the db
-      client.queuesaves.set(message.author.id, newtracks, `${Name}`);
+     await client.queuesaves.set(message.author.id, newtracks, `${Name}`);
       //return susccess message
       return message.reply({
         embeds: [new MessageEmbed()
@@ -391,7 +391,7 @@ module.exports = {
     case `show`:
     case `queue`:
     case `list`: {
-      let queues = client.queuesaves.get(message.author.id);
+      let queues = await client.queuesaves.get(message.author.id);
       if (Object.size(queues) <= 1)
         return message.reply({
           embeds: [new MessageEmbed()
@@ -432,7 +432,7 @@ module.exports = {
             .setDescription(eval(client.la[ls]["cmds"]["customqueues"]["savedqueue"]["variable64"]))
           ]
         });
-      if (client.queuesaves.get(message.author.id, `${Name}`))
+      if (await client.queuesaves.get(message.author.id, `${Name}`))
         return message.reply({
           embeds: [new MessageEmbed()
             .setFooter(client.getFooter(es))
@@ -464,7 +464,7 @@ module.exports = {
           ]
         });
       //get the old tracks from the Name
-      let oldtracks = client.queuesaves.get(message.author.id, `${Name}`);
+      let oldtracks = await client.queuesaves.get(message.author.id, `${Name}`);
       if (!Array.isArray(oldtracks)) oldtracks = [];
       const newtracks = [];
 
@@ -482,7 +482,7 @@ module.exports = {
       //define the new customqueue by adding the newtracks to the old tracks
       let newqueue = oldtracks.concat(newtracks)
       //save the newcustomqueue into the db
-      client.queuesaves.set(message.author.id, newqueue, `${Name}`);
+     await client.queuesaves.set(message.author.id, newqueue, `${Name}`);
       //return susccess message
       return message.reply({
         embeds: [new MessageEmbed()
@@ -516,7 +516,7 @@ module.exports = {
           ]
         });
       //if the queue does not exist yet, error
-      if (!client.queuesaves.get(message.author.id, `${Name}`))
+      if (!await client.queuesaves.get(message.author.id, `${Name}`))
         return message.reply({
           embeds: [new MessageEmbed()
             .setFooter(client.getFooter(es))
@@ -526,7 +526,7 @@ module.exports = {
           ]
         });
       //delete it
-      client.queuesaves.delete(message.author.id, `${Name}`);
+     await client.queuesaves.delete(message.author.id, `${Name}`);
       //return susccess message
       return message.reply({
         embeds: [new MessageEmbed()
@@ -614,7 +614,7 @@ module.exports = {
           ]
         });
       //if the queue does not exist yet, error
-      if (!client.queuesaves.get(message.author.id, `${Name}`))
+      if (!await client.queuesaves.get(message.author.id, `${Name}`))
         return message.reply({
           embeds: [new MessageEmbed()
             .setFooter(client.getFooter(es))
@@ -633,7 +633,7 @@ module.exports = {
         ]
       })
 
-      for (const track of client.queuesaves.get(message.author.id, `${Name}`)) {
+      for (const track of await client.queuesaves.get(message.author.id, `${Name}`)) {
         try {
           // Advanced way using the title, author, and duration for a precise search.
           const unresolvedTrack = TrackUtils.buildUnresolved({
@@ -702,7 +702,7 @@ module.exports = {
           ]
         });
       //if the queue already exists, then errors
-      if (!client.queuesaves.get(message.author.id, `${Name}`))
+      if (!await client.queuesaves.get(message.author.id, `${Name}`))
         return message.reply({
           embeds: [new MessageEmbed()
             .setFooter(client.getFooter(es))
@@ -712,7 +712,7 @@ module.exports = {
           ]
         });
       //get all tracks
-      const tracks = client.queuesaves.get(message.author.id, `${Name}`);
+      const tracks = await client.queuesaves.get(message.author.id, `${Name}`);
       //return susccess message
       let array = [];
       tracks.map((track, index) => array.push(`**${index})** [${track.title.split(`]`).join(`}`).split(`[`).join(`{`).substr(0, 60)}](${track.url})`)).join(`\n`)

@@ -59,7 +59,7 @@ module.exports = {
               time: 90000,
               errors: ["time"]
             })
-            .then(collected => {
+            .then( async collected => {
               var color = collected.first().content;
               if (!color) return message.reply({
                 embeds: [new Discord.MessageEmbed()
@@ -78,8 +78,8 @@ module.exports = {
                 ]
               });
               try {
-                client.settings.set(message.guild.id, color, "embed.color")
-                es = client.settings.get(message.guild.id, "embed")
+               await client.settings.set(message.guild.id, color, "embed.color")
+                es = await client.settings.get(message.guild.id, "embed")
                 return message.reply({
                   embeds: [new Discord.MessageEmbed()
                     .setTitle(eval(client.la[ls]["cmds"]["settings"]["setup-embed"]["variable11"]))
@@ -126,7 +126,7 @@ module.exports = {
               time: 90000,
               errors: ["time"]
             })
-            .then(collected => {
+            .then(async collected => {
               var url = collected.first().content;
 
               function attachIsImage(msgAttach) {
@@ -140,8 +140,8 @@ module.exports = {
               if (collected.first().attachments.size > 0) {
                 if (collected.first().attachments.every(attachIsImage)) {
                   try {
-                    client.settings.set(message.guild.id, url, "embed.footericon")
-                    es = client.settings.get(message.guild.id, "embed")
+                   await client.settings.set(message.guild.id, url, "embed.footericon")
+                    es = await client.settings.get(message.guild.id, "embed")
                     return message.reply({
                       embeds: [new Discord.MessageEmbed()
                         .setTitle(eval(client.la[ls]["cmds"]["settings"]["setup-embed"]["variable17"]))
@@ -178,8 +178,8 @@ module.exports = {
                 });
               } else {
                 try {
-                  client.settings.set(message.guild.id, url, "embed.footericon")
-                  es = client.settings.get(message.guild.id, "embed")
+                 await client.settings.set(message.guild.id, url, "embed.footericon")
+                  es = await client.settings.get(message.guild.id, "embed")
                   return message.reply({
                     embeds: [new Discord.MessageEmbed()
                       .setTitle(eval(client.la[ls]["cmds"]["settings"]["setup-embed"]["variable22"]))
@@ -226,11 +226,11 @@ module.exports = {
               time: 90000,
               errors: ["time"]
             })
-            .then(collected => {
+            .then(async collected => {
               var text = collected.first().content;
               try {
-                client.settings.set(message.guild.id, text, "embed.footertext")
-                es = client.settings.get(message.guild.id, "embed")
+               await client.settings.set(message.guild.id, text, "embed.footertext")
+                es = await client.settings.get(message.guild.id, "embed")
                 return message.reply({
                   embeds: [new Discord.MessageEmbed()
                     .setTitle(`<a:yes:833101995723194437> The new Embed Footer Text is:`.substr(0, 256))
@@ -264,8 +264,8 @@ module.exports = {
             });
         } else if (button.customId == "4") {
           try {
-            client.settings.set(message.guild.id, !client.settings.get(message.guild.id, "embed.thumb"), "embed.thumb")
-            es = client.settings.get(message.guild.id, "embed")
+           await client.settings.set(message.guild.id, !client.settings.get(message.guild.id, "embed.thumb"), "embed.thumb")
+            es = await client.settings.get(message.guild.id, "embed")
             return message.reply({
               embeds: [new Discord.MessageEmbed()
                 .setTitle(eval(client.la[ls]["cmds"]["settings"]["setup-embed"]["variable31"]))

@@ -90,7 +90,7 @@ Esto permitirá el arranque del nodo local y las bases de datos
 
 const express = require('express');
 const app = express();
-const port = 3400;
+const port = 4500;
 app.get("/", function (request, response) {
 response.sendFile(__dirname + '/page.html');});
 app.listen(port, () => console.log(`

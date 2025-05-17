@@ -12,7 +12,7 @@ var {
 
 //function for playling song + skipping
 async function skiptrack(client, message, args, type, slashCommand) {
-  let ls = client.settings.get(message.guild.id, "language")
+  let ls = await client.settings.get(message.guild.id, "language")
   var search = args.join(" ");
   var res;
   var player = client.manager.players.get(message.guild.id);

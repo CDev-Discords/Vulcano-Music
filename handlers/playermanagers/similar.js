@@ -11,7 +11,7 @@ var {
 
 //function for playling song
 async function similar(client, message, args, type, slashCommand) {
-  let ls = client.settings.get(message.guild.id, "language")
+  let ls = await client.settings.get(message.guild.id, "language")
   try {
     //get a playlist out of it
     var mixURL = args.join(" ");

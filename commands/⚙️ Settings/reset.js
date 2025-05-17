@@ -47,14 +47,14 @@ module.exports = {
             if (await client.stats.has(message.guild.id)) {
              await client.stats.delete(message.guild.id)
             }
-            if (client.musicsettings.has(message.guild.id)) {
-              client.musicsettings.delete(message.guild.id)
+            if (await client.musicsettings.has(message.guild.id)) {
+             await client.musicsettings.delete(message.guild.id)
             }
-            if (client.settings.has(message.guild.id)) {
-              client.settings.delete(message.guild.id)
+            if (await client.settings.has(message.guild.id)) {
+             await client.settings.delete(message.guild.id)
             }
-            if (client.queuesaves.has(message.guild.id)) {
-              client.queuesaves.delete(message.guild.id)
+            if (await client.queuesaves.has(message.guild.id)) {
+             await client.queuesaves.delete(message.guild.id)
             }
           await databasing(client, message.guild.id)
             //send the success message

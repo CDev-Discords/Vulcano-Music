@@ -15,7 +15,7 @@ module.exports = {
   type: "bot",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
     //change the default autoplay to "true"
-    client.settings.set(message.guild.id, !client.settings.get(message.guild.id, "defaultap"), "defaultap");
+   await client.settings.set(message.guild.id, !await client.settings.get(message.guild.id, "defaultap"), "defaultap");
 
     return message.reply({
       embeds: [new MessageEmbed()

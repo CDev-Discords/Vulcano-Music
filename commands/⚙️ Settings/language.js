@@ -144,7 +144,7 @@ module.exports = {
             if (b.user.id == message.author.id && b.message.id == helpmsg.id && b.customId.includes("language_")) {
               b.deferUpdate();
               let lang = b.customId.replace("language_", "")
-              client.settings.set(message.guild.id, lang, "language");
+             await client.settings.set(message.guild.id, lang, "language");
               ls = lang;
               message.reply({
                 embeds: [new Discord.MessageEmbed()
@@ -184,7 +184,7 @@ module.exports = {
           return;
         }
         case 1: {
-          client.settings.set(message.guild.id, "en", "language");
+         await client.settings.set(message.guild.id, "en", "language");
           ls = "en";
           return message.reply({
             embeds: [new Discord.MessageEmbed()
@@ -195,7 +195,7 @@ module.exports = {
           });
         }
         case 2: {
-          let thesettings = client.settings.get(message.guild.id, `language`)
+          let thesettings = await client.settings.get(message.guild.id, `language`)
           return message.reply({
             embeds: [new Discord.MessageEmbed()
               .setTitle(eval(client.la[ls]["cmds"]["settings"]["setup-language"]["variable7"]))

@@ -19,8 +19,8 @@ module.exports = {
           .setTitle(eval(client.la[ls]["cmds"]["owner"]["leaveserver"]["variable1"]))
         ]
       });
-    if (client.premium.get("global", "guilds").includes(args[0])) {
-      client.premium.remove("global", args[0], "guilds");
+    if (await client.premium.get("global", "guilds").includes(args[0])) {
+     await client.premium.remove("global", args[0], "guilds");
       let guild = client.guilds.cache.get(args[0]);
       if (guild) {
         guild.fetchOwner().then(owner => {
@@ -29,7 +29,7 @@ module.exports = {
       }
       return message.reply(`✅ **The Guild ${guild && guild.name ? guild.name : args[0]} is now __no longer__ a \`PREMIUM-GUILD\`**`)
     } else {
-      client.premium.push("global", args[0], "guilds");
+     await client.premium.push("global", args[0], "guilds");
       let guild = client.guilds.cache.get(args[0]);
       if (guild) {
         guild.fetchOwner().then(owner => {

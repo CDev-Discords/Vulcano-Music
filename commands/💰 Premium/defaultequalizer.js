@@ -15,7 +15,7 @@ module.exports = {
   type: "bot",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
     //switch the state
-    client.settings.set(message.guild.id, !client.settings.get(message.guild.id, "defaulteq"), "defaulteq");
+   await client.settings.set(message.guild.id, !await client.settings.get(message.guild.id, "defaulteq"), "defaulteq");
     //send an information message
     return message.reply({
       embeds: [new MessageEmbed()

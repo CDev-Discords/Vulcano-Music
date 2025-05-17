@@ -18,7 +18,7 @@ module.exports = {
   description: "If we ask you for the Original Bot name or when you ordered it you can execute this Command to find it out!",
   run: async (client, message, args, cmduser, text, prefix) => {
   
-    let es = client.settings.get(message.guild.id, "embed");let ls = client.settings.get(message.guild.id, "language")
+    let es = await client.settings.get(message.guild.id, "embed");let ls = await client.settings.get(message.guild.id, "language")
     if (!config.ownerIDS.some(r => r.includes(message.author.id)))
         return message.channel.send({embeds : [new MessageEmbed()
           .setColor(es.wrongcolor)

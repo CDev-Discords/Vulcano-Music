@@ -12,7 +12,7 @@ var {
 
 //function for playling song
 async function song(client, message, args, type, slashCommand, extras) {
-  let ls = client.settings.get(message.guild.id, "language")
+  let ls = await client.settings.get(message.guild.id, "language")
   var search = args.join(" ");
   var res;
   var player = client.manager.players.get(message.guild.id);

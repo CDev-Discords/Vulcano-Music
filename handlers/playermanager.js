@@ -12,8 +12,8 @@ module.exports = async (client, message, args, type, slashCommand = false, extra
   //start typing
   //just visual for the console
 
-  let ls = client.settings.get(message.guild.id, "language");
-  let ee = client.settings.get(message.guild.id, "embed")
+  let ls = await client.settings.get(message.guild.id, "language");
+  let ee = await client.settings.get(message.guild.id, "embed")
 
   let {
     channel

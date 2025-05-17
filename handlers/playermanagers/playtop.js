@@ -11,7 +11,7 @@ var {
 
 module.exports = playtop;
 async function playtop(client, message, args, type, slashCommand) {
-  let ls = client.settings.get(message.guild.id, "language")
+  let ls = await client.settings.get(message.guild.id, "language")
   const search = args.join(" ");
   var player = client.manager.players.get(message.guild.id);
   //if no node, connect it 

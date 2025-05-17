@@ -12,13 +12,13 @@ module.exports = {
   usage: "toggleunknowncommandinfo",
   type: "bot",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
-    client.settings.set(message.guild.id, !client.settings.get(message.guild.id, "unkowncmdmessage"), `unkowncmdmessage`);
+   await client.settings.set(message.guild.id, !await client.settings.get(message.guild.id, "unkowncmdmessage"), `unkowncmdmessage`);
     return message.reply({
       embeds: [new MessageEmbed()
         .setColor(es.color).setThumbnail(es.thumb ? es.footericon && (es.footericon.includes("http://") || es.footericon.includes("https://")) ? es.footericon : client.user.displayAvatarURL() : null)
         .setFooter(client.getFooter(es))
         .setTitle(eval(client.la[ls]["cmds"]["settings"]["toggleunknowncommandinfo"]["variable1"]))
-        .setDescription(`${client.settings.get(message.guild.id, "unkowncmdmessage") ? "I will now send an Information when the Command is not found" : "I will not send Information of Unknown Commands"}`.substr(0, 2048))
+        .setDescription(`${await client.settings.get(message.guild.id, "unkowncmdmessage") ? "I will now send an Information when the Command is not found" : "I will not send Information of Unknown Commands"}`.substr(0, 2048))
       ]
     });
   }

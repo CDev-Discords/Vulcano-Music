@@ -35,7 +35,7 @@ module.exports = {
       });
     }
     //if ther role is already in the Database, return error
-    if (client.settings.get(message.guild.id, `djroles`).includes(role.id))
+    if (await client.settings.get(message.guild.id, `djroles`).includes(role.id))
       return message.reply({
         embeds: [new MessageEmbed()
           .setColor(es.wrongcolor)
@@ -44,9 +44,9 @@ module.exports = {
         ]
       });
     //push it into the database
-    client.settings.push(message.guild.id, role.id, `djroles`);
+   await client.settings.push(message.guild.id, role.id, `djroles`);
     //these lines creates a string with all djroles
-    var leftb = client.settings.get(message.guild.id, `djroles`).map(r => `<@&${r}>`);
+    var leftb = await client.settings.get(message.guild.id, `djroles`).map(r => `<@&${r}>`);
     if (leftb.length == 0) leftb = client.la[ls]["common"]["nodjs"];
     else leftb = String(leftb.join(", "));
 

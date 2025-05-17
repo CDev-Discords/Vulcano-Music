@@ -43,7 +43,7 @@ module.exports = {
       });
     }
     //set the new volume
-    client.settings.set(message.guild.id, Number(volume), "defaultvolume");
+   await client.settings.set(message.guild.id, Number(volume), "defaultvolume");
     //send an information message
     return message.reply({
       embeds: [new MessageEmbed()

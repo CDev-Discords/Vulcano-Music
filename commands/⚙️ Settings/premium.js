@@ -13,7 +13,7 @@ module.exports = {
   memberpermissions: [`ADMINISTRATOR`],
   type: "bot",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
-    if (client.premium.get("global", "guilds").includes(message.guild.id)) {
+    if (await client.premium.get("global", "guilds").includes(message.guild.id)) {
       return message.reply(`❌ **This Guild is already a \`PREMIUM-GUILD\`**`)
     }
     let theowner = "NO OWNER DATA! ID: ";

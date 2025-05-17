@@ -13,7 +13,7 @@ module.exports = {
   type: "bot",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
     //set the new state
-    client.settings.set(message.guild.id, !client.settings.get(message.guild.id, "autoresume"), "autoresume");
+   await client.settings.set(message.guild.id, !await client.settings.get(message.guild.id, "autoresume"), "autoresume");
     //send information embed
     return message.reply({
       embeds: [new MessageEmbed()

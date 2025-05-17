@@ -33,7 +33,7 @@ module.exports = {
       });
     }
     //if its not in the database return error
-    if (!client.settings.get(message.guild.id, `botchannel`).includes(channel.id))
+    if (!await client.settings.get(message.guild.id, `botchannel`).includes(channel.id))
       return message.reply({
         embeds: [new MessageEmbed()
           .setColor(es.wrongcolor)
@@ -42,13 +42,13 @@ module.exports = {
         ]
       });
     //remove the Channel from the Database
-    client.settings.remove(message.guild.id, channel.id, `botchannel`);
+   await client.settings.remove(message.guild.id, channel.id, `botchannel`);
     //these lines creates the string for all botchannels
     let leftb = ``;
-    if (client.settings.get(message.guild.id, `botchannel`).join(``) === ``) leftb = client.la[ls]["common"]["nobotchannels"];
+    if (await client.settings.get(message.guild.id, `botchannel`).join(``) === ``) leftb = client.la[ls]["common"]["nobotchannels"];
     else
-      for (let i = 0; i < client.settings.get(message.guild.id, `botchannel`).length; i++) {
-        leftb += `<#` + client.settings.get(message.guild.id, `botchannel`)[i] + `> | `
+      for (let i = 0; i < await client.settings.get(message.guild.id, `botchannel`).length; i++) {
+        leftb += `<#` + await client.settings.get(message.guild.id, `botchannel`)[i] + `> | `
       }
     //send informational message
     return message.reply({

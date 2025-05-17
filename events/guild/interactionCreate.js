@@ -35,7 +35,7 @@ module.exports = async (client, interaction) => {
         const CategoryName = interaction.commandName;
        await databasing(client, guild.id, member.id)
         var not_allowed = false;
-        const guild_settings = client.settings.get(guild.id);
+        const guild_settings = await client.settings.get(guild.id);
         let es = guild_settings.embed;
         let ls = guild_settings.language;
         let {
@@ -59,7 +59,7 @@ module.exports = async (client, interaction) => {
               for (const channelId of botchannel) {
                 let channel = guild.channels.cache.get(channelId);
                 if (!channel) {
-                  client.settings.remove(guild.id, channelId, `botchannel`)
+                 await client.settings.remove(guild.id, channelId, `botchannel`)
                 }
               }
               not_allowed = true;
@@ -99,8 +99,6 @@ module.exports = async (client, interaction) => {
           }
           timestamps.set(member.id, now); //if he is not on cooldown, set it to the cooldown
           setTimeout(() => timestamps.delete(member.id), cooldownAmount); //set a timeout function with the cooldown, so it gets deleted later on again
-         await client.stats.inc(guild.id, "commands"); //counting our Database stats for SERVER
-         await client.stats.inc("global", "commands"); //counting our Database Stats for GLOBAL
           //if Command has specific permission return error
           if (command.memberpermissions && command.memberpermissions.length > 0 && !interaction.member.permissions.has(command.memberpermissions)) {
             return interaction.reply({
@@ -255,20 +253,20 @@ module.exports = async (client, interaction) => {
       }).catch(() => {});
     }
     if (interaction.customId == "PREMIUM-ACCEPT") {
-      if (client.premium.get("global", "guilds").includes(guild.id)) {
+      if (await client.premium.get("global", "guilds").includes(guild.id)) {
         interaction.update({
           embeds: [interaction.message.embeds[0].setTitle(`✅ Guild is already a PREMIUM Member!`)],
           components: []
         })
       } else {
-        client.premium.push("global", guild.id, "guilds");
+       await client.premium.push("global", guild.id, "guilds");
         interaction.update({
           embeds: [interaction.message.embeds[0].setTitle(`✅ Accepted the Guild!`)],
           components: []
         })
       }
     } else {
-      if (client.premium.get("global", "guilds").includes(guild.id)) {
+      if (await client.premium.get("global", "guilds").includes(guild.id)) {
         interaction.update({
           embeds: [interaction.message.embeds[0].setTitle(`✅ Guild is already a PREMIUM Member!`)],
           components: []

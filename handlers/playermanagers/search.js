@@ -13,7 +13,7 @@ var {
 
 //function for searching songs
 async function search(client, message, args, type, slashCommand) {
-  let ls = client.settings.get(message.guild.id, "language")
+  let ls = await client.settings.get(message.guild.id, "language")
   var search = args.join(" ");
   if (!slashCommand) {
     await message.channel.sendTyping();

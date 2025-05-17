@@ -668,7 +668,7 @@ async function swap_pages2(client, message, embeds) {
   let button_home = new MessageButton().setStyle('DANGER').setCustomId('2').setEmoji("🏠").setLabel("Home")
   let button_forward = new MessageButton().setStyle('SUCCESS').setCustomId('3').setEmoji('832598861813776394').setLabel("Forward")
   const allbuttons = [new MessageActionRow().addComponents([button_back, button_home, button_forward])]
-  let prefix = client.settings.get(message.guild.id, "prefix");
+  let prefix = await client.settings.get(message.guild.id, "prefix");
   //Send message with buttons
   let swapmsg = await message.channel.send({
     content: `***Click on the __Buttons__ to swap the Pages***`,
@@ -750,7 +750,7 @@ async function swap_pages2_interaction(client, interaction, embeds) {
   let button_home = new MessageButton().setStyle('DANGER').setCustomId('2').setEmoji("🏠").setLabel("Home")
   let button_forward = new MessageButton().setStyle('SUCCESS').setCustomId('3').setEmoji('832598861813776394').setLabel("Forward")
   const allbuttons = [new MessageActionRow().addComponents([button_back, button_home, button_forward])]
-  let prefix = client.settings.get(interaction.member.guild.id, "prefix");
+  let prefix = await client.settings.get(interaction.member.guild.id, "prefix");
   //Send message with buttons
   let swapmsg = await interaction.reply({
     content: `***Click on the __Buttons__ to swap the Pages***`,

@@ -14,7 +14,7 @@ module.exports = {
   type: "music",
   run: async (client, message, args, cmduser, text, prefix, player, es, ls) => {
     //switch the state
-    client.settings.set(message.guild.id, !client.settings.get(message.guild.id, "pruning"), "pruning");
+   await client.settings.set(message.guild.id, !await client.settings.get(message.guild.id, "pruning"), "pruning");
     //send information embed
     return message.reply({
       embeds: [new MessageEmbed()

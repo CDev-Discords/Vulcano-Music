@@ -357,7 +357,7 @@ module.exports = (client) => {
        */
       var autoresumeinterval = setInterval(async () => {
         var pl = client.manager.players.get(player.guild);
-        if (client.settings.get(pl.guild, `autoresume`)) {
+        if (await client.settings.get(pl.guild, `autoresume`)) {
           let filter = pl.get(`filter`)
           let filtervalue = pl.get(`filtervalue`)
           let autoplay = pl.get(`autoplay`)
@@ -462,8 +462,8 @@ module.exports = (client) => {
         let edited = false;
         let guild = client.guilds.cache.get(player.guild);
         if (!guild) return;
-        const es = client.settings.get(guild.id, "embed")
-        const ls = client.settings.get(guild.id, "language")
+        const es = await client.settings.get(guild.id, "embed")
+        const ls = await client.settings.get(guild.id, "language")
   
         let channel = guild.channels.cache.get(player.textChannel);
         if (!channel) channel = await guild.channels.fetch(player.textChannel);
@@ -471,13 +471,13 @@ module.exports = (client) => {
         if (playercreated.has(player.guild)) {
           player.set(`eq`, player.get("eq") || `💣 None`);
           player.set(`filter`, player.get("eq") || `🧨 None`);
-          player.set(`autoplay`, player.get("autoplay") || client.settings.get(player.guild, `defaultap`));
+          player.set(`autoplay`, player.get("autoplay") || await client.settings.get(player.guild, `defaultap`));
           player.set(`afk`, false)
           if (player.get("autoresume")) {
             player.set("autoresume", false)
           } else {
-            await player.setVolume(client.settings.get(player.guild, `defaultvolume`))
-            if (client.settings.get(player.guild, `defaulteq`)) {
+            await player.setVolume(await client.settings.get(player.guild, `defaultvolume`))
+            if (await client.settings.get(player.guild, `defaulteq`)) {
               await player.setEQ(client.eqs.music);
             }
           }
@@ -528,7 +528,7 @@ module.exports = (client) => {
         //set the previous track just have it is used for the autoplay function!
         player.set(`previoustrack`, track);
         //if that's disabled return
-        if (!client.settings.get(player.guild, `pruning`)) {
+        if (!await client.settings.get(player.guild, `pruning`)) {
           return client.logger(`Pruning Disabled - Not Sending a Message`);
         }
         // playANewTrack(client,player,track);
@@ -889,8 +889,8 @@ module.exports = (client) => {
  */
 
 
-function generateQueueEmbed(client, player, track) {
-  const es = player.guild ? client.settings.get(player.guild, "embed") : ee;
+async function generateQueueEmbed(client, player, track) {
+  const es = player.guild ? await client.settings.get(player.guild, "embed") : ee;
   var embed = new MessageEmbed().setColor(es.color)
   embed.setAuthor(client.getAuthor(`${track.title}`, `https://images-ext-1.discordapp.net/external/DkPCBVBHBDJC8xHHCF2G7-rJXnTwj_qs78udThL8Cy0/%3Fv%3D1/https/cdn.discordapp.com/emojis/859459305152708630.gif`, track.uri))
   embed.setThumbnail(`https://img.youtube.com/vi/${track.identifier}/mqdefault.jpg`)

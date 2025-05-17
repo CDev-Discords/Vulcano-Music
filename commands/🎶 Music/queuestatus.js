@@ -21,7 +21,7 @@ module.exports = {
     embed.setDescription(eval(client.la[ls]["cmds"]["music"]["queuestatus"]["variable2"]))
     embed.addField(`${emoji.msg.raise_volume} Volume`, `\`\`\`${player.volume}%\`\`\``, true)
     embed.addField(`${emoji.msg.repeat_mode} Queue Length: `, `\`\`\`${player.queue.length} Songs\`\`\``, true)
-    embed.addField(`📨 Pruning: `, `\`\`\`${client.settings.get(message.guild.id, "playmsg") ? `✅ Enabled` : `❌ Disabled`}\`\`\``, true)
+    embed.addField(`📨 Pruning: `, `\`\`\`${await client.settings.get(message.guild.id, "playmsg") ? `✅ Enabled` : `❌ Disabled`}\`\`\``, true)
 
     embed.addField(`${emoji.msg.autoplay_mode} Song Loop: `, `\`\`\`${player.trackRepeat ? `✅ Enabled` : `❌ Disabled`}\`\`\``, true)
     embed.addField(`${emoji.msg.autoplay_mode} Queue Loop: `, `\`\`\`${player.queueRepeat ? `✅ Enabled` : `❌ Disabled`}\`\`\``, true)

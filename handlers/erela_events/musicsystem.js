@@ -30,9 +30,9 @@ module.exports = client => {
     } = interaction;
     if (!guild) guild = client.guilds.cache.get(interaction.guildId);
     if (!guild) return;
-    const es = client.settings.get(guild.id, "embed")
-    const ls = client.settings.get(guild.id, "language")
-    const prefix = client.settings.get(guild.id, "prefix");
+    const es = await client.settings.get(guild.id, "embed")
+    const ls = await client.settings.get(guild.id, "language")
+    const prefix = await client.settings.get(guild.id, "prefix");
     var data = await client.musicsettings.get(guild.id);
     const musicChannelId = data.channel;
     const musicChannelMessage = data.message;
@@ -422,7 +422,7 @@ module.exports = client => {
       }
     }
     if (message.author.bot) return; // if the message  author is a bot, return aka ignore the inputs
-    const prefix = client.settings.get(message.guild.id, "prefix")
+    const prefix = await client.settings.get(message.guild.id, "prefix")
     //get the prefix regex system
     const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`); //the prefix can be a Mention of the Bot / The defined Prefix of the Bot
     var args;
@@ -479,11 +479,11 @@ module.exports = client => {
  * Please mention Him / Milrato Development, when using this Code!
  * @INFO
  */
-function generateQueueEmbed(client, guildId, leave) {
+async function generateQueueEmbed(client, guildId, leave) {
   const guild = client.guilds.cache.get(guildId)
   if (!guild) return;
-  const es = client.settings.get(guild.id, "embed")
-  const ls = client.settings.get(guild.id, "language")
+  const es = await client.settings.get(guild.id, "embed")
+  const ls = await client.settings.get(guild.id, "language")
   var embeds = [
     new MessageEmbed()
     .setColor(es.color)

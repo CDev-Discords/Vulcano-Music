@@ -62,7 +62,7 @@ module.exports = async (client, message) => {
             for (const channelId of botchannel) {
               let channel = message.guild.channels.cache.get(channelId);
               if (!channel) {
-                client.settings.remove(message.guild.id, channelId, `botchannel`)
+               await client.settings.remove(message.guild.id, channelId, `botchannel`)
               }
             }
             try {
@@ -182,9 +182,7 @@ module.exports = async (client, message) => {
           }
           timestamps.set(message.author.id, now); //if he is not on cooldown, set it to the cooldown
           setTimeout(() => timestamps.delete(message.author.id), cooldownAmount); //set a timeout function with the cooldown, so it gets deleted later on again
-          try {
-           await client.stats.inc(message.guild.id, "commands"); //counting our Database stats for SERVER
-           await client.stats.inc("global", "commands"); //counting our Database Stats for GLOBAL
+          try { 
 
             //if Command has specific permission return error
             if (command.memberpermissions) {

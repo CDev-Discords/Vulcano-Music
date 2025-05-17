@@ -35,7 +35,7 @@ module.exports = {
       });
     }
     //if its not in the database return error
-    if (!client.settings.get(message.guild.id, `djroles`).includes(role.id))
+    if (!await client.settings.get(message.guild.id, `djroles`).includes(role.id))
       return message.reply({
         embeds: [new MessageEmbed()
           .setColor(es.wrongcolor)
@@ -44,9 +44,9 @@ module.exports = {
         ]
       });
     //remove it from the Database
-    client.settings.remove(message.guild.id, role.id, `djroles`);
+   await client.settings.remove(message.guild.id, role.id, `djroles`);
     //These lines create the String for all left Roles
-    var leftb = client.settings.get(message.guild.id, `djroles`).map(r => `<@&${r}>`);
+    var leftb = await client.settings.get(message.guild.id, `djroles`).map(r => `<@&${r}>`);
     if (leftb.length == 0) leftb = client.la[ls]["common"]["nodjs"];
     else leftb.join(", ");
     //send the success message

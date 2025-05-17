@@ -36,7 +36,7 @@ module.exports = {
         ]
       });
     //set the new prefix
-    client.settings.set(message.guild.id, args[0], `prefix`);
+   await client.settings.set(message.guild.id, args[0], `prefix`);
     //return success embed
     return message.reply({
       embeds: [new MessageEmbed()

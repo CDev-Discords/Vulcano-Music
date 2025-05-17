@@ -1138,3 +1138,1037 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2025-01-07 21:58:44.559  WARN 32254 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
 2025-01-07 22:19:11.280  WARN 40828 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
 2025-01-07 22:19:12.355  WARN 40828 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 16:12:25.234  WARN 35733 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2025-05-17 16:12:26.704  WARN 35733 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 16:14:53.136  WARN 37331 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2025-05-17 16:14:54.645  WARN 37331 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 16:17:48.487  WARN 39049 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2025-05-17 16:17:50.687  WARN 39049 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 16:17:51.608  WARN 39049 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 2333 is already in use
+2025-05-17 16:17:51.618 ERROR 39049 --- [main] lavalink.server.Launcher                 : Application failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 2333 is already in use
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at lavalink.server.Launcher.launchMain(Launcher.kt:165) ~[classes!/:na]
+	at lavalink.server.Launcher.main(Launcher.kt:127) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[Lavalink.jar:na]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[Lavalink.jar:na]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[Lavalink.jar:na]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[Lavalink.jar:na]
+Caused by: org.springframework.boot.web.server.PortInUseException: Port 2333 is already in use
+	at org.springframework.boot.web.embedded.undertow.UndertowWebServer.lambda$start$0(UndertowWebServer.java:127) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.server.PortInUseException.lambda$ifPortBindingException$1(PortInUseException.java:85) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.server.PortInUseException.ifCausedBy(PortInUseException.java:103) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.server.PortInUseException.ifPortBindingException(PortInUseException.java:82) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.embedded.undertow.UndertowWebServer.start(UndertowWebServer.java:123) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:43) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) ~[spring-context-5.3.18.jar!/:5.3.18]
+	... 22 common frames omitted
+
+2025-05-17 16:17:51.646 ERROR 39049 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 2333 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 2333 or configure this application to listen on another port.
+
+2025-05-17 16:18:02.136  WARN 39299 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2025-05-17 16:18:03.298  WARN 39299 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 16:18:03.908  WARN 39299 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 2333 is already in use
+2025-05-17 16:18:03.919 ERROR 39299 --- [main] lavalink.server.Launcher                 : Application failed
+
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 2333 is already in use
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:181) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) ~[spring-context-5.3.18.jar!/:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:164) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at lavalink.server.Launcher.launchMain(Launcher.kt:165) ~[classes!/:na]
+	at lavalink.server.Launcher.main(Launcher.kt:127) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[Lavalink.jar:na]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[Lavalink.jar:na]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[Lavalink.jar:na]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[Lavalink.jar:na]
+Caused by: org.springframework.boot.web.server.PortInUseException: Port 2333 is already in use
+	at org.springframework.boot.web.embedded.undertow.UndertowWebServer.lambda$start$0(UndertowWebServer.java:127) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.server.PortInUseException.lambda$ifPortBindingException$1(PortInUseException.java:85) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.server.PortInUseException.ifCausedBy(PortInUseException.java:103) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.server.PortInUseException.ifPortBindingException(PortInUseException.java:82) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.embedded.undertow.UndertowWebServer.start(UndertowWebServer.java:123) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:43) ~[spring-boot-2.6.6.jar!/:2.6.6]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) ~[spring-context-5.3.18.jar!/:5.3.18]
+	... 22 common frames omitted
+
+2025-05-17 16:18:03.947 ERROR 39299 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 2333 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 2333 or configure this application to listen on another port.
+
+2025-05-17 16:18:25.738  WARN 39774 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2025-05-17 16:18:26.862  WARN 39774 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 16:22:35.247  WARN 41913 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2025-05-17 16:22:36.542  WARN 41913 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 17:56:27.038  INFO 104393 --- [main] lavalink.server.Launcher                 : Starting Launcher using Java 16 on codespaces-bfcc03 with PID 104393 (/workspaces/Vulcano-Music/Lavalink.jar started by codespace in /workspaces/Vulcano-Music)
+2025-05-17 17:56:27.048  INFO 104393 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2025-05-17 17:56:29.531  INFO 104393 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.43 seconds (JVM running for 4.218)
+2025-05-17 17:56:29.535  INFO 104393 --- [main] lavalink.server.Launcher                 : You can safely ignore the big red warning about illegal reflection. See https://github.com/lavalink-devs/Lavalink/issues/295
+2025-05-17 17:56:29.630  INFO 104393 --- [main] lavalink.server.Launcher                 : 
+
+[32m       .  [31m _                  _ _       _    [32m__ _ _
+[32m      /\\ [31m| | __ ___   ____ _| (_)_ __ | | __[32m\ \ \ \
+[32m     ( ( )[31m| |/ _` \ \ / / _` | | | '_ \| |/ /[32m \ \ \ \
+[32m      \\/ [31m| | (_| |\ V / (_| | | | | | |   < [32m  ) ) ) )
+[32m       '  [31m|_|\__,_| \_/ \__,_|_|_|_| |_|_|\_\[32m / / / /
+[0m    =========================================[32m/_/_/_/[0m
+
+	Version:        3.7.13
+	Build time:     20.09.2024 19:49:35 UTC
+	Branch          HEAD
+	Commit:         3c6134d
+	Commit time:    20.09.2024 19:40:52 UTC
+	JVM:            16
+	Lavaplayer      1.5.6
+
+2025-05-17 17:56:29.639  INFO 104393 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2025-05-17 17:56:30.709  WARN 104393 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2025-05-17 17:56:30.738  INFO 104393 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2025-05-17 17:56:30.738  INFO 104393 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1089 ms
+2025-05-17 17:56:30.899  INFO 104393 --- [main] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring enabled, reporting results every 2 minutes.
+2025-05-17 17:56:31.096  WARN 104393 --- [main] l.s.config.AudioPlayerConfiguration      : The default Youtube source is now deprecated and won't receive further updates.
+You should use the new Youtube source plugin instead.
+https://github.com/lavalink-devs/youtube-source#plugin.
+To disable this warning, set 'lavalink.server.sources.youtube' to false in your application.yml.
+2025-05-17 17:56:31.743  INFO 104393 --- [main] lavalink.server.config.KoeConfiguration  : OS: LINUX, Arch: X86_64
+2025-05-17 17:56:31.744  INFO 104393 --- [main] lavalink.server.config.KoeConfiguration  : Enabling JDA-NAS
+2025-05-17 17:56:31.749  INFO 104393 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: loading with filter null
+2025-05-17 17:56:31.755  INFO 104393 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: successfully loaded.
+2025-05-17 17:56:31.806  WARN 104393 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 17:56:32.152  INFO 104393 --- [main] io.undertow                              : starting server: Undertow - 2.2.16.Final
+2025-05-17 17:56:32.162  INFO 104393 --- [main] org.xnio                                 : XNIO version 3.8.6.Final
+2025-05-17 17:56:32.173  INFO 104393 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.6.Final
+2025-05-17 17:56:32.252  INFO 104393 --- [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2025-05-17 17:56:32.296  INFO 104393 --- [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 2333 (http)
+2025-05-17 17:56:32.307  INFO 104393 --- [main] lavalink.server.Launcher                 : Started Launcher in 2.764 seconds (JVM running for 6.994)
+2025-05-17 17:56:32.308  INFO 104393 --- [main] lavalink.server.Launcher                 : Lavalink is ready to accept connections.
+2025-05-17 17:56:51.002  INFO 104393 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17 17:56:51.003  INFO 104393 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17 17:56:51.005  INFO 104393 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-17 17:56:51.038  INFO 104393 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /[0:0:0:0:0:0:0:1]:35936
+2025-05-17 17:56:51.408  INFO 104393 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2025-05-17 17:57:20.372  INFO 104393 --- [XNIO-1 task-3] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:me voy"
+2025-05-17 17:57:20.670 ERROR 104393 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:me voy
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 17:57:20.673 ERROR 104393 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 17:58:33.248  INFO 104393 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /[0:0:0:0:0:0:0:1]:35936 -- CloseStatus[code=1006, reason=]
+2025-05-17 17:58:33.249  INFO 104393 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2025-05-17 17:58:38.614  INFO 104393 --- [SpringApplicationShutdownHook] io.undertow                              : stopping server: Undertow - 2.2.16.Final
+2025-05-17 17:58:38.616  INFO 104393 --- [SpringApplicationShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-05-17 17:58:38.619  INFO 104393 --- [SpringApplicationShutdownHook] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring disabled.
+2025-05-17 17:58:45.717  INFO 106055 --- [main] lavalink.server.Launcher                 : Starting Launcher using Java 16 on codespaces-bfcc03 with PID 106055 (/workspaces/Vulcano-Music/Lavalink.jar started by codespace in /workspaces/Vulcano-Music)
+2025-05-17 17:58:45.722  INFO 106055 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2025-05-17 17:58:47.178  INFO 106055 --- [main] lavalink.server.Launcher                 : Started Launcher in 2.3 seconds (JVM running for 3.849)
+2025-05-17 17:58:47.182  INFO 106055 --- [main] lavalink.server.Launcher                 : You can safely ignore the big red warning about illegal reflection. See https://github.com/lavalink-devs/Lavalink/issues/295
+2025-05-17 17:58:47.277  INFO 106055 --- [main] lavalink.server.Launcher                 : 
+
+[32m       .  [31m _                  _ _       _    [32m__ _ _
+[32m      /\\ [31m| | __ ___   ____ _| (_)_ __ | | __[32m\ \ \ \
+[32m     ( ( )[31m| |/ _` \ \ / / _` | | | '_ \| |/ /[32m \ \ \ \
+[32m      \\/ [31m| | (_| |\ V / (_| | | | | | |   < [32m  ) ) ) )
+[32m       '  [31m|_|\__,_| \_/ \__,_|_|_|_| |_|_|\_\[32m / / / /
+[0m    =========================================[32m/_/_/_/[0m
+
+	Version:        3.7.13
+	Build time:     20.09.2024 19:49:35 UTC
+	Branch          HEAD
+	Commit:         3c6134d
+	Commit time:    20.09.2024 19:40:52 UTC
+	JVM:            16
+	Lavaplayer      1.5.6
+
+2025-05-17 17:58:47.285  INFO 106055 --- [main] lavalink.server.Launcher                 : No active profile set, falling back to 1 default profile: "default"
+2025-05-17 17:58:48.328  WARN 106055 --- [main] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2025-05-17 17:58:48.351  INFO 106055 --- [main] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2025-05-17 17:58:48.352  INFO 106055 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1061 ms
+2025-05-17 17:58:48.574  INFO 106055 --- [main] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring enabled, reporting results every 2 minutes.
+2025-05-17 17:58:48.965  WARN 106055 --- [main] l.s.config.AudioPlayerConfiguration      : The default Youtube source is now deprecated and won't receive further updates.
+You should use the new Youtube source plugin instead.
+https://github.com/lavalink-devs/youtube-source#plugin.
+To disable this warning, set 'lavalink.server.sources.youtube' to false in your application.yml.
+2025-05-17 17:58:49.837  INFO 106055 --- [main] lavalink.server.config.KoeConfiguration  : OS: LINUX, Arch: X86_64
+2025-05-17 17:58:49.837  INFO 106055 --- [main] lavalink.server.config.KoeConfiguration  : Enabling JDA-NAS
+2025-05-17 17:58:49.842  INFO 106055 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: loading with filter null
+2025-05-17 17:58:49.848  INFO 106055 --- [main] c.s.l.c.natives.NativeLibraryLoader      : Native library udpqueue: successfully loaded.
+2025-05-17 17:58:49.928  WARN 106055 --- [main] l.server.config.SentryConfiguration      : Turning off sentry
+2025-05-17 17:58:50.294  INFO 106055 --- [main] io.undertow                              : starting server: Undertow - 2.2.16.Final
+2025-05-17 17:58:50.303  INFO 106055 --- [main] org.xnio                                 : XNIO version 3.8.6.Final
+2025-05-17 17:58:50.312  INFO 106055 --- [main] org.xnio.nio                             : XNIO NIO Implementation Version 3.8.6.Final
+2025-05-17 17:58:50.400  INFO 106055 --- [main] org.jboss.threads                        : JBoss Threads version 3.1.0.Final
+2025-05-17 17:58:50.445  INFO 106055 --- [main] o.s.b.w.e.undertow.UndertowWebServer     : Undertow started on port(s) 2333 (http)
+2025-05-17 17:58:50.455  INFO 106055 --- [main] lavalink.server.Launcher                 : Started Launcher in 3.267 seconds (JVM running for 7.127)
+2025-05-17 17:58:50.457  INFO 106055 --- [main] lavalink.server.Launcher                 : Lavalink is ready to accept connections.
+2025-05-17 17:59:13.237  INFO 106055 --- [XNIO-1 task-1] io.undertow.servlet                      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17 17:59:13.238  INFO 106055 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17 17:59:13.240  INFO 106055 --- [XNIO-1 task-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-17 17:59:13.262  INFO 106055 --- [XNIO-1 task-1] l.server.io.HandshakeInterceptorImpl     : Incoming connection from /[0:0:0:0:0:0:0:1]:46736
+2025-05-17 17:59:13.656  INFO 106055 --- [XNIO-1 task-1] lavalink.server.io.SocketServer          : Connection successfully established from erela.js
+2025-05-17 17:59:21.636  INFO 106055 --- [XNIO-1 task-2] l.server.player.AudioLoaderRestHandler   : Got request to load for identifier "ytsearch:me voy"
+2025-05-17 17:59:21.890 ERROR 106055 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:me voy
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 17:59:21.892 ERROR 106055 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:03:59.877  INFO 106055 --- [XNIO-1 I/O-1] lavalink.server.io.SocketServer          : Connection closed from /[0:0:0:0:0:0:0:1]:46736 -- CloseStatus[code=1006, reason=]
+2025-05-17 18:03:59.881  INFO 106055 --- [XNIO-1 I/O-1] lavalink.server.io.SocketContext         : Shutting down 0 playing players.
+2025-05-17 18:04:02.828  INFO 106055 --- [SpringApplicationShutdownHook] io.undertow                              : stopping server: Undertow - 2.2.16.Final
+2025-05-17 18:04:02.832  INFO 106055 --- [SpringApplicationShutdownHook] io.undertow.servlet                      : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-05-17 18:04:02.834  INFO 106055 --- [SpringApplicationShutdownHook] c.s.d.l.tools.GarbageCollectionMonitor   : GC monitoring disabled.
+2025-05-17 18:09:01.619 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:me voy
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:09:01.624 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:11:16.725 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:me voy
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:11:16.729 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:13:25.436 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:Stereo love
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:13:25.439 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:13:55.657 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:Soundcloud stereo love
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:13:55.657 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:20:34.034 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:Soundcloud stereo love
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:20:34.035 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:21:03.545 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:stereo love
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:21:03.545 ERROR 111582 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:50:26.135 ERROR 136749 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:me voy
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:50:26.145 ERROR 136749 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:52:18.882 ERROR 139897 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:stereo love
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:52:18.892 ERROR 139897 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:53:45.072 ERROR 139897 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Unknown file format.
+	at com.sedmelluq.discord.lavaplayer.source.ProbingAudioSourceManager.handleLoadResult(ProbingAudioSourceManager.java:35) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.http.HttpAudioSourceManager.loadItem(HttpAudioSourceManager.java:73) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+
+2025-05-17 18:54:00.074 ERROR 139897 --- [lava-daemon-pool-info-loader-2-thread-1] c.s.d.l.p.DefaultAudioPlayerManager      : Error in loading item ytsearch:deezer te ves fatal
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+
+2025-05-17 18:54:00.075 ERROR 139897 --- [lava-daemon-pool-info-loader-2-thread-1] lavalink.server.player.AudioLoader       : Load failed
+
+com.sedmelluq.discord.lavaplayer.tools.FriendlyException: Something went wrong when looking up the track
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:45) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.dispatchItemLoadFailure(DefaultAudioPlayerManager.java:202) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:191) ~[lavaplayer-1.5.6.jar!/:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:831) ~[na:na]
+	Suppressed: com.sedmelluq.discord.lavaplayer.tools.exception.EnvironmentInformation: 
+  lavaplayer.version: 1.5.6
+  os.arch: amd64
+  os.name: Linux
+  os.version: 6.8.0-1027-azure
+  java.vendor: Azul Systems, Inc.
+  java.version: 16
+  java.runtime.version: 16+36
+  java.vm.version: 16+36
+Caused by: java.lang.RuntimeException: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.ExceptionTools.wrapUnfriendlyExceptions(ExceptionTools.java:59) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:70) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:294) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager$LoadingRoutes.search(YoutubeAudioSourceManager.java:260) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.DefaultYoutubeLinkRouter.route(DefaultYoutubeLinkRouter.java:39) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItemOnce(YoutubeAudioSourceManager.java:228) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager.loadItem(YoutubeAudioSourceManager.java:159) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItemOnce(DefaultAudioPlayerManager.java:406) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.checkSourcesForItem(DefaultAudioPlayerManager.java:388) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager.lambda$createItemLoader$0(DefaultAudioPlayerManager.java:183) ~[lavaplayer-1.5.6.jar!/:na]
+	... 4 common frames omitted
+Caused by: java.io.IOException: Invalid status code for search response: 400
+	at com.sedmelluq.discord.lavaplayer.tools.io.HttpClientTools.assertSuccessWithContent(HttpClientTools.java:154) ~[lavaplayer-1.5.6.jar!/:na]
+	at com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeSearchProvider.loadSearchResult(YoutubeSearchProvider.java:62) ~[lavaplayer-1.5.6.jar!/:na]
+	... 12 common frames omitted
+

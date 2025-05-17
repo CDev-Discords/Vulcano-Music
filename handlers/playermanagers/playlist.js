@@ -11,7 +11,7 @@ var {
 
 //function for playing playlists
 async function playlist(client, message, args, type, slashCommand = false) {
-  let ls = client.settings.get(message.guild.id, "language")
+  let ls = await client.settings.get(message.guild.id, "language")
   var search = args.join(" ");
   try {
     var res;
