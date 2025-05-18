@@ -134,3 +134,7 @@ Well then skip step **` 5. `**
 > - `50% is Language able` ... finish the rest of it!
 > 
 > - Not all emojis are yet in the emojis.json file ... Fix those!
+
+**Notas adicionales:**
+
+Esta rama quedó desmantenida
